@@ -1,0 +1,26 @@
+GET http://localhost:3000
+###
+GET http://localhost:3000/api/customer 
+### ^-Line 3 is แสดงผลข้อมูลทั้งหมดใน Database-^
+GET http://localhost:3000/api/customer/63b5070c4b5cfe0ecdaa8b99
+### ^-Line 5 is แสดงผลข้อมูล 1 Record ตาม id ยาวๆๆๆๆๆๆ-^
+POST http://localhost:3000/api/customer HTTP/1.1
+Content-Type: application/json
+
+{
+    "CustomerId":   1004,
+    "FullName":     "Fukibi",
+    "Address":      "Greek"
+}
+### ^-Line 7 is Create Record-^
+PUT  http://localhost:3000/api/customer/63b507d04b5cfe0ecdaa8ba9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "CustomerId":   1001,
+    "FullName":     "Suka",
+    "Address":      "France"
+}
+### ^-Line 16 is Update Record-^
+DELETE http://localhost:3000/api/customer/63b507d04b5cfe0ecdaa8ba9 HTTP/1.1
+### ^-Line 25 is Delete Record-^
